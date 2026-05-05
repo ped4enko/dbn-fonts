@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Зручні короткі URL для CSS:
+#   https://fonts.dbn.co.ua/example-font  →  /css/example-font.css
+# (розкоментуй і додай свої шрифти, або просто використовуй повні /css/[id].css URL)
+
+# /:font  /css/:font.css  302

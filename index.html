@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Українські шрифти — fonts.dbn.co.ua</title>
+  <meta name="description" content="Безкоштовний CDN українських шрифтів. Підключай одним рядком CSS, без завантаження архівів.">
+  <meta property="og:title" content="Українські шрифти — fonts.dbn.co.ua">
+  <meta property="og:description" content="Швидкий CDN українських шрифтів. Підключай одним рядком до свого сайту.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3EAa%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --bg-card: #181b22;
+      --bg-code: #0a0c10;
+      --border: #2a2f3a;
+      --text: #e8eaed;
+      --text-muted: #9aa0a8;
+      --accent: #ffd700;
+      --accent-2: #4dabf7;
+      --success: #51cf66;
+      --radius: 10px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fafbfc;
+        --bg-card: #ffffff;
+        --bg-code: #f3f5f8;
+        --border: #e1e5ec;
+        --text: #1a1d23;
+        --text-muted: #5b6470;
+        --accent: #d9a800;
+        --accent-2: #1971c2;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-2); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,215,0,0.03) 0%, transparent 100%);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 44px);
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+    h1 .accent { color: var(--accent); }
+    .lede { color: var(--text-muted); max-width: 640px; margin: 0; font-size: 17px; }
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin: 28px 0 0;
+      flex-wrap: wrap;
+    }
+    .search {
+      flex: 1;
+      min-width: 240px;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 15px;
+      transition: border-color .15s;
+    }
+    .search:focus { outline: none; border-color: var(--accent-2); }
+    .stats { color: var(--text-muted); font-size: 14px; align-self: center; }
+
+    main { padding: 32px 0 80px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .card-title { margin: 0; font-size: 22px; font-weight: 700; }
+    .card-meta { color: var(--text-muted); font-size: 13px; }
+    .card-meta span + span::before { content: " • "; margin: 0 4px; }
+
+    .preview {
+      padding: 4px 24px 24px;
+      font-size: 38px;
+      line-height: 1.2;
+      min-height: 60px;
+      word-wrap: break-word;
+    }
+    .preview[contenteditable="true"]:focus {
+      outline: 1px dashed var(--border);
+      outline-offset: 6px;
+    }
+
+    .preview-controls {
+      display: flex;
+      gap: 12px;
+      padding: 0 24px 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .size-slider {
+      flex: 1;
+      min-width: 140px;
+      max-width: 220px;
+    }
+    .weight-buttons {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .weight-btn {
+      padding: 4px 10px;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all .15s;
+    }
+    .weight-btn:hover { color: var(--text); }
+    .weight-btn.active {
+      background: var(--accent-2);
+      color: white;
+      border-color: var(--accent-2);
+    }
+
+    details { border-top: 1px solid var(--border); }
+    summary {
+      padding: 14px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      list-style: none;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "↓"; color: var(--text-muted); transition: transform .2s; }
+    details[open] summary::after { transform: rotate(180deg); }
+
+    .integration { padding: 0 24px 20px; }
+    .tabs { display: flex; gap: 4px; margin-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .tab {
+      padding: 8px 14px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 13px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .tab.active { color: var(--text); border-bottom-color: var(--accent); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    pre {
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      margin: 0;
+      font-family: ui-monospace, "SF Mono", Monaco, Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.55;
+      position: relative;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 4px 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 11px;
+    }
+    .copy-btn:hover { color: var(--text); }
+    .copy-btn.copied { color: var(--success); border-color: var(--success); }
+
+    .pre-wrap { position: relative; }
+
+    .empty {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      .preview { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><span class="accent">Aa</span> Українські шрифти</h1>
+      <p class="lede">CDN українських шрифтів на базі Cloudflare. Підключай до свого сайту одним рядком CSS — без завантаження архівів і налаштування self-hosting.</p>
+      <div class="controls">
+        <input type="text" class="search" id="search" placeholder="Пошук шрифту…" autocomplete="off">
+        <div class="stats" id="stats"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid" id="grid">
+      <div class="empty">Завантаження каталогу…</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>fonts.dbn.co.ua · <a href="https://dbn.co.ua/publ/ukrajinski_shrifti/4-1-0-1334">Назад до dbn.co.ua</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const SUBDOMAIN = location.origin; // на проді — https://fonts.dbn.co.ua
+
+    async function loadFonts() {
+      const res = await fetch('/fonts.json', { cache: 'no-store' });
+      const data = await res.json();
+      return data.fonts || [];
+    }
+
+    function injectFontCSS(font) {
+      // Підключаємо CSS-файл шрифту, щоб preview рендерився в реальній гарнітурі
+      if (!font.cssFile) return;
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/' + font.cssFile;
+      document.head.appendChild(link);
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    function buildFaceBlock(font) {
+      return font.weights.map(w => {
+        const woff2 = w.files.woff2 ? `${SUBDOMAIN}/${w.files.woff2}` : null;
+        const woff  = w.files.woff  ? `${SUBDOMAIN}/${w.files.woff}`  : null;
+        const sources = [
+          woff2 && `url('${woff2}') format('woff2')`,
+          woff  && `url('${woff}') format('woff')`
+        ].filter(Boolean).join(',\n       ');
+        return `@font-face {
+  font-family: '${font.fontFamily}';
+  src: ${sources};
+  font-weight: ${w.weight};
+  font-style: ${w.style};
+  font-display: swap;
+}`;
+      }).join('\n\n');
+    }
+
+    function renderCard(font) {
+      const linkSnippet = `<link rel="stylesheet" href="${SUBDOMAIN}/${font.cssFile}">`;
+      const cssUsage = `body {\n  font-family: '${font.fontFamily}', ${font.category};\n}`;
+      const faceBlock = buildFaceBlock(font);
+
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.dataset.fontId = font.id;
+      card.dataset.searchable = (font.name + ' ' + (font.designer||'') + ' ' + (font.category||'')).toLowerCase();
+      card.innerHTML = `
+        <div class="card-header">
+          <h2 class="card-title">${escapeHtml(font.name)}</h2>
+          <div class="card-meta">
+            ${font.category ? `<span>${escapeHtml(font.category)}</span>` : ''}
+            ${font.designer ? `<span>${escapeHtml(font.designer)}</span>` : ''}
+            ${font.license ? `<span>${escapeHtml(font.license)}</span>` : ''}
+          </div>
+        </div>
+        <div class="preview" contenteditable="true" spellcheck="false"
+             style="font-family: '${escapeHtml(font.fontFamily)}', ${escapeHtml(font.category||'sans-serif')}; font-weight: ${font.weights[0].weight};">
+          ${escapeHtml(font.previewText || 'Слава Україні! The quick brown fox jumps over the lazy dog.')}
+        </div>
+        <div class="preview-controls">
+          <input type="range" class="size-slider" min="14" max="96" value="48" aria-label="Розмір прев'ю">
+          <div class="weight-buttons">
+            ${font.weights.map((w,i) => `<button class="weight-btn ${i===0?'active':''}" data-weight="${w.weight}" data-style="${w.style}">${escapeHtml(w.label || (w.weight + ' ' + w.style))}</button>`).join('')}
+          </div>
+        </div>
+        <details>
+          <summary>Як підключити</summary>
+          <div class="integration">
+            <div class="tabs">
+              <button class="tab active" data-tab="link">CSS link</button>
+              <button class="tab" data-tab="face">@font-face</button>
+              <button class="tab" data-tab="usage">Використання</button>
+            </div>
+            <div class="tab-content active" data-tab="link">
+              <p style="color:var(--text-muted); font-size:13px; margin:0 0 8px">Додай у <code>&lt;head&gt;</code>:</p>
+              <div class="pre-wrap"><pre><code>${escapeHtml(linkSnippet)}</code></pre><button class="copy-btn">Копіювати</button></div>
+            </div>
+            <div class="tab-content" data-tab="face">
+              <p style="color:var(--text-muted); font-size:13px; margin:0 0 8px">Або встав у свій CSS напряму:</p>
+              <div class="pre-wrap"><pre><code>${escapeHtml(faceBlock)}</code></pre><button class="copy-btn">Копіювати</button></div>
+            </div>
+            <div class="tab-content" data-tab="usage">
+              <p style="color:var(--text-muted); font-size:13px; margin:0 0 8px">Застосуй до тексту:</p>
+              <div class="pre-wrap"><pre><code>${escapeHtml(cssUsage)}</code></pre><button class="copy-btn">Копіювати</button></div>
+            </div>
+          </div>
+        </details>
+      `;
+
+      // Sliders
+      const slider = card.querySelector('.size-slider');
+      const preview = card.querySelector('.preview');
+      slider.addEventListener('input', () => {
+        preview.style.fontSize = slider.value + 'px';
+      });
+
+      // Weight buttons
+      card.querySelectorAll('.weight-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          card.querySelectorAll('.weight-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          preview.style.fontWeight = btn.dataset.weight;
+          preview.style.fontStyle = btn.dataset.style;
+        });
+      });
+
+      // Tabs
+      card.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const name = tab.dataset.tab;
+          card.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+          card.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.dataset.tab === name));
+        });
+      });
+
+      // Copy buttons
+      card.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const text = btn.previousElementSibling.innerText;
+          try {
+            await navigator.clipboard.writeText(text);
+            btn.classList.add('copied');
+            const orig = btn.textContent;
+            btn.textContent = 'Скопійовано!';
+            setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 1500);
+          } catch (e) {
+            console.error(e);
+          }
+        });
+      });
+
+      return card;
+    }
+
+    function applyFilter(query) {
+      query = query.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll('.card').forEach(card => {
+        const match = !query || card.dataset.searchable.includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      const stats = document.getElementById('stats');
+      const total = document.querySelectorAll('.card').length;
+      stats.textContent = visible === total ? `${total} шрифтів` : `${visible} з ${total}`;
+    }
+
+    (async () => {
+      try {
+        const fonts = await loadFonts();
+        const grid = document.getElementById('grid');
+        grid.innerHTML = '';
+
+        if (fonts.length === 0) {
+          grid.innerHTML = '<div class="empty">Каталог поки порожній. Додай шрифти до <code>fonts.json</code>.</div>';
+          return;
+        }
+
+        fonts.forEach(injectFontCSS);
+        fonts.forEach(font => grid.appendChild(renderCard(font)));
+        applyFilter('');
+
+        document.getElementById('search').addEventListener('input', e => applyFilter(e.target.value));
+      } catch (err) {
+        console.error(err);
+        document.getElementById('grid').innerHTML =
+          '<div class="empty">Не вдалося завантажити <code>fonts.json</code>. Перевір файл.</div>';
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Cloudflare Pages headers
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+# Файли шрифтів — довгий immutable кеш + CORS
+/fonts/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+  Timing-Allow-Origin: *
+
+# CSS-обгортки — короткий кеш, щоб можна було оновлювати @font-face
+/css/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Cache-Control: public, max-age=86400, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# Метадані каталогу
+/fonts.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+# Загальні security headers для всього сайту
+/*
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=()

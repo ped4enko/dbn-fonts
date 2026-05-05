@@ -1,0 +1,24 @@
+/* Example Font — підключення одним рядком:
+   <link rel="stylesheet" href="https://fonts.dbn.co.ua/css/example-font.css">
+
+   Потім у CSS:
+   body { font-family: 'Example Font', sans-serif; }
+*/
+
+@font-face {
+  font-family: 'Example Font';
+  src: url('https://fonts.dbn.co.ua/fonts/example-font/ExampleFont-Regular.woff2') format('woff2'),
+       url('https://fonts.dbn.co.ua/fonts/example-font/ExampleFont-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Example Font';
+  src: url('https://fonts.dbn.co.ua/fonts/example-font/ExampleFont-Bold.woff2') format('woff2'),
+       url('https://fonts.dbn.co.ua/fonts/example-font/ExampleFont-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

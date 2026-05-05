@@ -1,0 +1,38 @@
+{
+  "$schema": "Кожен шрифт описується одним об'єктом у масиві fonts. id використовується в URL та назвах файлів.",
+  "fonts": [
+    {
+      "id": "example-font",
+      "name": "Example Font",
+      "category": "sans-serif",
+      "designer": "Designer Name",
+      "license": "Free for personal use",
+      "licenseUrl": "https://example.com/license",
+      "description": "Короткий опис шрифту: для чого підходить, особливості.",
+      "previewText": "Слава Україні! The quick brown fox jumps over the lazy dog. 0123456789",
+      "cssFile": "css/example-font.css",
+      "fontFamily": "Example Font",
+      "weights": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "label": "Regular",
+          "files": {
+            "woff2": "fonts/example-font/ExampleFont-Regular.woff2",
+            "woff": "fonts/example-font/ExampleFont-Regular.woff"
+          }
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "label": "Bold",
+          "files": {
+            "woff2": "fonts/example-font/ExampleFont-Bold.woff2",
+            "woff": "fonts/example-font/ExampleFont-Bold.woff"
+          }
+        }
+      ],
+      "downloadUrl": "fonts/example-font/example-font.zip"
+    }
+  ]
+}
