@@ -103,6 +103,7 @@
     }
     .card-title { margin: 0; font-size: 22px; font-weight: 700; }
     .card-meta { color: var(--text-muted); font-size: 13px; }
+    .card-desc { color: var(--text-muted); font-size: 14px; margin: 8px 0 0; }
     .card-meta span + span::before { content: " • "; margin: 0 4px; }
 
     .preview {
@@ -311,8 +312,10 @@
           <div class="card-meta">
             ${font.category ? `<span>${escapeHtml(font.category)}</span>` : ''}
             ${font.designer ? `<span>${escapeHtml(font.designer)}</span>` : ''}
-            ${font.license ? `<span>${escapeHtml(font.license)}</span>` : ''}
+            ${font.license ? `<span>${font.licenseUrl ? `<a href="${escapeHtml(font.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(font.license)}</a>` : escapeHtml(font.license)}</span>` : ''}
+            ${font.downloadUrl ? `<span><a href="/${escapeHtml(font.downloadUrl)}" download>Завантажити</a></span>` : ''}
           </div>
+          ${font.description ? `<p class="card-desc">${escapeHtml(font.description)}</p>` : ''}
         </div>
         <div class="preview" contenteditable="true" spellcheck="false"
              style="font-family: '${escapeHtml(font.fontFamily)}', ${escapeHtml(font.category||'sans-serif')}; font-weight: ${font.weights[0].weight};">
