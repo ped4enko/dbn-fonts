@@ -2,24 +2,33 @@
   "$schema": "Кожен шрифт описується одним об'єктом у масиві fonts. id використовується в URL та назвах файлів.",
   "fonts": [
     {
-      "id": "example-font",
-      "name": "Example Font",
-      "category": "sans-serif",
-      "designer": "Designer Name",
-      "license": "Free for personal use",
-      "licenseUrl": "https://example.com/license",
-      "description": "Короткий опис шрифту: для чого підходить, особливості.",
-      "previewText": "Слава Україні! The quick brown fox jumps over the lazy dog. 0123456789",
-      "cssFile": "css/example-font.css",
-      "fontFamily": "Example Font",
+      "id": "zakon-text",
+      "name": "Zakon Text",
+      "category": "serif",
+      "designer": "Олексій Чекаль, Геннадій Заречнюк, Дмитро Растворцев, Андрій Шевченко",
+      "license": "Вільне використання (Мінкульт)",
+      "licenseUrl": "https://mincult.gov.ua/zakon/",
+      "description": "Національний шрифт для діловодства й державних документів, розроблений на замовлення Міністерства культури України (меценат Work.ua). Вільна лише текстова гарнітура Zakon Text; Zakon Decor і Zakon Letterpress мають закриту ліцензію.",
+      "previewText": "Слава Україні! Закон України «Про будівельні норми». The quick brown fox jumps over the lazy dog. 0123456789",
+      "cssFile": "css/zakon-text.css",
+      "fontFamily": "Zakon Text",
       "weights": [
         {
           "weight": 400,
           "style": "normal",
           "label": "Regular",
           "files": {
-            "woff2": "fonts/example-font/ExampleFont-Regular.woff2",
-            "woff": "fonts/example-font/ExampleFont-Regular.woff"
+            "woff2": "fonts/zakon-text/ZakonText-Regular.woff2",
+            "woff": "fonts/zakon-text/ZakonText-Regular.woff"
+          }
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "label": "Italic",
+          "files": {
+            "woff2": "fonts/zakon-text/ZakonText-Italic.woff2",
+            "woff": "fonts/zakon-text/ZakonText-Italic.woff"
           }
         },
         {
@@ -27,12 +36,21 @@
           "style": "normal",
           "label": "Bold",
           "files": {
-            "woff2": "fonts/example-font/ExampleFont-Bold.woff2",
-            "woff": "fonts/example-font/ExampleFont-Bold.woff"
+            "woff2": "fonts/zakon-text/ZakonText-Bold.woff2",
+            "woff": "fonts/zakon-text/ZakonText-Bold.woff"
+          }
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "label": "Bold Italic",
+          "files": {
+            "woff2": "fonts/zakon-text/ZakonText-BoldItalic.woff2",
+            "woff": "fonts/zakon-text/ZakonText-BoldItalic.woff"
           }
         }
       ],
-      "downloadUrl": "fonts/example-font/example-font.zip"
+      "downloadUrl": "fonts/zakon-text/zakon-text.zip"
     }
   ]
 }

@@ -1,0 +1,49 @@
+/* Zakon Text — національний шрифт для діловодства (Мінкульт, 2026).
+   Офіційна сторінка й ліцензія: https://mincult.gov.ua/zakon/
+   «Текстова гарнітура Zakon Text призначена для діловодства й відкрита
+   для вільного використання необмеженого кола осіб.»
+   Автори: Олексій Чекаль, Геннадій Заречнюк, Дмитро Растворцев, Андрій Шевченко;
+   керівник проєкту Тарас Іщик. Меценат: Work.ua.
+
+   Підключення одним рядком:
+   <link rel="stylesheet" href="https://fonts.dbn.co.ua/css/zakon-text.css">
+
+   Потім у CSS:
+   body { font-family: 'Zakon Text', serif; }
+*/
+
+@font-face {
+  font-family: 'Zakon Text';
+  src: url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-Regular.woff2') format('woff2'),
+       url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zakon Text';
+  src: url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-Italic.woff2') format('woff2'),
+       url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zakon Text';
+  src: url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-Bold.woff2') format('woff2'),
+       url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zakon Text';
+  src: url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-BoldItalic.woff2') format('woff2'),
+       url('https://fonts.dbn.co.ua/fonts/zakon-text/ZakonText-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
